@@ -244,11 +244,11 @@ public partial class @InputAcctionsControllers: IInputActionCollection2, IDispos
             ]
         },
         {
-            ""name"": ""Acciones"",
+            ""name"": ""UI"",
             ""id"": ""5876161d-8ade-4fe0-b14f-2fb6262f3257"",
             ""actions"": [
                 {
-                    ""name"": ""Seleccionar"",
+                    ""name"": ""Select"",
                     ""type"": ""Button"",
                     ""id"": ""81fba080-b878-4fc4-8ef1-85bbefd23eaa"",
                     ""expectedControlType"": ""Button"",
@@ -266,9 +266,9 @@ public partial class @InputAcctionsControllers: IInputActionCollection2, IDispos
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Desplazar"",
+                    ""name"": ""Navigate"",
                     ""type"": ""Value"",
-                    ""id"": ""d2bfd7e4-05a0-46c3-aff3-ee4876f0ba17"",
+                    ""id"": ""5c18015b-3a09-4193-8dd8-844cb1c35ef5"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -283,7 +283,7 @@ public partial class @InputAcctionsControllers: IInputActionCollection2, IDispos
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Seleccionar"",
+                    ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -294,7 +294,7 @@ public partial class @InputAcctionsControllers: IInputActionCollection2, IDispos
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Seleccionar"",
+                    ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -311,34 +311,56 @@ public partial class @InputAcctionsControllers: IInputActionCollection2, IDispos
                 },
                 {
                     ""name"": ""2D Vector"",
-                    ""id"": ""0307e703-9468-47e6-84bb-5e96a23c8c2c"",
+                    ""id"": ""06f77749-0013-48c6-82a0-f218d3b3c194"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Desplazar"",
+                    ""action"": ""Navigate"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""d3a47890-1d97-4052-ada8-e5bc50f52ad4"",
+                    ""id"": ""5950e3ff-1bd1-4759-9d14-384203dd32f3"",
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Desplazar"",
+                    ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""1516895f-6c59-4873-8606-849f79a62e41"",
+                    ""id"": ""707cdfdd-1942-46ef-b225-b2b4a237345c"",
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Desplazar"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""01a6aee9-89b5-4b9b-909e-20be1620e528"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""354eb0d7-1cde-43ba-a99c-5acf6b4329c3"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -353,11 +375,11 @@ public partial class @InputAcctionsControllers: IInputActionCollection2, IDispos
         m_Game_Pause = m_Game.FindAction("Pause", throwIfNotFound: true);
         m_Game_Flechas = m_Game.FindAction("Flechas", throwIfNotFound: true);
         m_Game_AWSD = m_Game.FindAction("AWSD", throwIfNotFound: true);
-        // Acciones
-        m_Acciones = asset.FindActionMap("Acciones", throwIfNotFound: true);
-        m_Acciones_Seleccionar = m_Acciones.FindAction("Seleccionar", throwIfNotFound: true);
-        m_Acciones_Salir = m_Acciones.FindAction("Salir", throwIfNotFound: true);
-        m_Acciones_Desplazar = m_Acciones.FindAction("Desplazar", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_Select = m_UI.FindAction("Select", throwIfNotFound: true);
+        m_UI_Salir = m_UI.FindAction("Salir", throwIfNotFound: true);
+        m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -486,67 +508,67 @@ public partial class @InputAcctionsControllers: IInputActionCollection2, IDispos
     }
     public GameActions @Game => new GameActions(this);
 
-    // Acciones
-    private readonly InputActionMap m_Acciones;
-    private List<IAccionesActions> m_AccionesActionsCallbackInterfaces = new List<IAccionesActions>();
-    private readonly InputAction m_Acciones_Seleccionar;
-    private readonly InputAction m_Acciones_Salir;
-    private readonly InputAction m_Acciones_Desplazar;
-    public struct AccionesActions
+    // UI
+    private readonly InputActionMap m_UI;
+    private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
+    private readonly InputAction m_UI_Select;
+    private readonly InputAction m_UI_Salir;
+    private readonly InputAction m_UI_Navigate;
+    public struct UIActions
     {
         private @InputAcctionsControllers m_Wrapper;
-        public AccionesActions(@InputAcctionsControllers wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Seleccionar => m_Wrapper.m_Acciones_Seleccionar;
-        public InputAction @Salir => m_Wrapper.m_Acciones_Salir;
-        public InputAction @Desplazar => m_Wrapper.m_Acciones_Desplazar;
-        public InputActionMap Get() { return m_Wrapper.m_Acciones; }
+        public UIActions(@InputAcctionsControllers wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Select => m_Wrapper.m_UI_Select;
+        public InputAction @Salir => m_Wrapper.m_UI_Salir;
+        public InputAction @Navigate => m_Wrapper.m_UI_Navigate;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(AccionesActions set) { return set.Get(); }
-        public void AddCallbacks(IAccionesActions instance)
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void AddCallbacks(IUIActions instance)
         {
-            if (instance == null || m_Wrapper.m_AccionesActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_AccionesActionsCallbackInterfaces.Add(instance);
-            @Seleccionar.started += instance.OnSeleccionar;
-            @Seleccionar.performed += instance.OnSeleccionar;
-            @Seleccionar.canceled += instance.OnSeleccionar;
+            if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
+            @Select.started += instance.OnSelect;
+            @Select.performed += instance.OnSelect;
+            @Select.canceled += instance.OnSelect;
             @Salir.started += instance.OnSalir;
             @Salir.performed += instance.OnSalir;
             @Salir.canceled += instance.OnSalir;
-            @Desplazar.started += instance.OnDesplazar;
-            @Desplazar.performed += instance.OnDesplazar;
-            @Desplazar.canceled += instance.OnDesplazar;
+            @Navigate.started += instance.OnNavigate;
+            @Navigate.performed += instance.OnNavigate;
+            @Navigate.canceled += instance.OnNavigate;
         }
 
-        private void UnregisterCallbacks(IAccionesActions instance)
+        private void UnregisterCallbacks(IUIActions instance)
         {
-            @Seleccionar.started -= instance.OnSeleccionar;
-            @Seleccionar.performed -= instance.OnSeleccionar;
-            @Seleccionar.canceled -= instance.OnSeleccionar;
+            @Select.started -= instance.OnSelect;
+            @Select.performed -= instance.OnSelect;
+            @Select.canceled -= instance.OnSelect;
             @Salir.started -= instance.OnSalir;
             @Salir.performed -= instance.OnSalir;
             @Salir.canceled -= instance.OnSalir;
-            @Desplazar.started -= instance.OnDesplazar;
-            @Desplazar.performed -= instance.OnDesplazar;
-            @Desplazar.canceled -= instance.OnDesplazar;
+            @Navigate.started -= instance.OnNavigate;
+            @Navigate.performed -= instance.OnNavigate;
+            @Navigate.canceled -= instance.OnNavigate;
         }
 
-        public void RemoveCallbacks(IAccionesActions instance)
+        public void RemoveCallbacks(IUIActions instance)
         {
-            if (m_Wrapper.m_AccionesActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_UIActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IAccionesActions instance)
+        public void SetCallbacks(IUIActions instance)
         {
-            foreach (var item in m_Wrapper.m_AccionesActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_UIActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_AccionesActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_UIActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public AccionesActions @Acciones => new AccionesActions(this);
+    public UIActions @UI => new UIActions(this);
     public interface IGameActions
     {
         void OnDFJK(InputAction.CallbackContext context);
@@ -554,10 +576,10 @@ public partial class @InputAcctionsControllers: IInputActionCollection2, IDispos
         void OnFlechas(InputAction.CallbackContext context);
         void OnAWSD(InputAction.CallbackContext context);
     }
-    public interface IAccionesActions
+    public interface IUIActions
     {
-        void OnSeleccionar(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
         void OnSalir(InputAction.CallbackContext context);
-        void OnDesplazar(InputAction.CallbackContext context);
+        void OnNavigate(InputAction.CallbackContext context);
     }
 }

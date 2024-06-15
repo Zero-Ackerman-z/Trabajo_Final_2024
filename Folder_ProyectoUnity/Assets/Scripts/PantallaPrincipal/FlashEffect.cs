@@ -47,5 +47,6 @@ public class FlashEffect : MonoBehaviour
         }
 
         flashImage.enabled = false; // Desactivar la imagen al finalizar el flash
+        EventManager.CompleteFlashEffect();
     }
 }

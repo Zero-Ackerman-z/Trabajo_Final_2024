@@ -14,17 +14,9 @@ public class PlayerController : MonoBehaviour
     {
         controls = new InputAcctionsControllers();
 
-        // Asigna las funciones de callback a los eventos de input
-        controls.Acciones.Seleccionar.performed += ctx => Seleccionar(ctx);
         controls.Game.Pause.performed += ctx => Pausar(ctx);
-
-        // WASD Controls
         controls.Game.AWSD.performed += ctx => MoverWASD(ctx);
-
-        // Arrow Controls
         controls.Game.Flechas.performed += ctx => MoverFlechas(ctx);
-
-        // SDFJK Controls
         controls.Game.DFJK.performed += ctx => MoverSDFJK(ctx);
 
         if (Instance == null)
@@ -54,14 +46,48 @@ public class PlayerController : MonoBehaviour
 
     private void Seleccionar(InputAction.CallbackContext context)
     {
-        // Lógica para la acción de seleccionar
+        if (inputEnabled)
+        {
+
+            string buttonName = gameObject.name;
+
+            // Determinar la escena a cargar basada en el botón seleccionado
+            switch (buttonName)
+            {
+                case "StartButton":
+                    UIButtonActions.Instance.MainMenu();                    
+                    break;
+                case "OptionsButton":
+                    UIButtonActions.Instance.OnStoryMode();
+                    break;
+                case "CreditsButton":
+                    UIButtonActions.Instance.OnFreePlay();
+                    break;
+                // Agrega más casos según sea necesario para otros botones y escenas
+                default:
+                    Debug.LogWarning("Botón no reconocido: " + buttonName);
+                    break;
+            }
+        }
+    }
+    private void navigate(InputAction.CallbackContext context)
+    {
+        // Lógica para la acción de pausar
         if (inputEnabled)
         {
             // Solo si los inputs están habilitados
             // ...
         }
     }
-
+    private void Salir(InputAction.CallbackContext context)
+    {
+        // Lógica para la acción de pausar
+        if (inputEnabled)
+        {
+            // Solo si los inputs están habilitados
+            // ...
+        }
+    }
     private void Pausar(InputAction.CallbackContext context)
     {
         // Lógica para la acción de pausar

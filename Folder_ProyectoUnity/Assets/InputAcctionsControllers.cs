@@ -257,7 +257,7 @@ public partial class @InputAcctionsControllers: IInputActionCollection2, IDispos
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Salir"",
+                    ""name"": ""Back"",
                     ""type"": ""Button"",
                     ""id"": ""a6ed858f-70fb-4b14-ac52-c9ed5cbc0412"",
                     ""expectedControlType"": ""Button"",
@@ -305,7 +305,7 @@ public partial class @InputAcctionsControllers: IInputActionCollection2, IDispos
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Salir"",
+                    ""action"": ""Back"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -378,7 +378,7 @@ public partial class @InputAcctionsControllers: IInputActionCollection2, IDispos
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Select = m_UI.FindAction("Select", throwIfNotFound: true);
-        m_UI_Salir = m_UI.FindAction("Salir", throwIfNotFound: true);
+        m_UI_Back = m_UI.FindAction("Back", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
     }
 
@@ -512,14 +512,14 @@ public partial class @InputAcctionsControllers: IInputActionCollection2, IDispos
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
     private readonly InputAction m_UI_Select;
-    private readonly InputAction m_UI_Salir;
+    private readonly InputAction m_UI_Back;
     private readonly InputAction m_UI_Navigate;
     public struct UIActions
     {
         private @InputAcctionsControllers m_Wrapper;
         public UIActions(@InputAcctionsControllers wrapper) { m_Wrapper = wrapper; }
         public InputAction @Select => m_Wrapper.m_UI_Select;
-        public InputAction @Salir => m_Wrapper.m_UI_Salir;
+        public InputAction @Back => m_Wrapper.m_UI_Back;
         public InputAction @Navigate => m_Wrapper.m_UI_Navigate;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
@@ -533,9 +533,9 @@ public partial class @InputAcctionsControllers: IInputActionCollection2, IDispos
             @Select.started += instance.OnSelect;
             @Select.performed += instance.OnSelect;
             @Select.canceled += instance.OnSelect;
-            @Salir.started += instance.OnSalir;
-            @Salir.performed += instance.OnSalir;
-            @Salir.canceled += instance.OnSalir;
+            @Back.started += instance.OnBack;
+            @Back.performed += instance.OnBack;
+            @Back.canceled += instance.OnBack;
             @Navigate.started += instance.OnNavigate;
             @Navigate.performed += instance.OnNavigate;
             @Navigate.canceled += instance.OnNavigate;
@@ -546,9 +546,9 @@ public partial class @InputAcctionsControllers: IInputActionCollection2, IDispos
             @Select.started -= instance.OnSelect;
             @Select.performed -= instance.OnSelect;
             @Select.canceled -= instance.OnSelect;
-            @Salir.started -= instance.OnSalir;
-            @Salir.performed -= instance.OnSalir;
-            @Salir.canceled -= instance.OnSalir;
+            @Back.started -= instance.OnBack;
+            @Back.performed -= instance.OnBack;
+            @Back.canceled -= instance.OnBack;
             @Navigate.started -= instance.OnNavigate;
             @Navigate.performed -= instance.OnNavigate;
             @Navigate.canceled -= instance.OnNavigate;
@@ -579,7 +579,7 @@ public partial class @InputAcctionsControllers: IInputActionCollection2, IDispos
     public interface IUIActions
     {
         void OnSelect(InputAction.CallbackContext context);
-        void OnSalir(InputAction.CallbackContext context);
+        void OnBack(InputAction.CallbackContext context);
         void OnNavigate(InputAction.CallbackContext context);
     }
 }

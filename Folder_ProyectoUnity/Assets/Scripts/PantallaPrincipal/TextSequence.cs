@@ -10,9 +10,9 @@ public class TextSequence : MonoBehaviour
 
     private string[] rows = new string[]
     {
-        "Friday",
-        "Night",
-        "Funki"
+        "Friday Night Funki",
+        "VS",
+        "GV"
     };
 
     void Start()

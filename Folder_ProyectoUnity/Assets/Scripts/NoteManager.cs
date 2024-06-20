@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class NoteManager : MonoBehaviour
 {
-    private SimplyLinkedList<Note> noteList = new SimplyLinkedList<Note>();
+    private SimplyLinkedList<Nota> noteList = new SimplyLinkedList<Nota>();
 
     public void AddNoteAtEnd(float time, int type)
     {
-        Note newNote = new Note(time, type);
-        noteList.InsertNodeAtEnd(newNote);
+       // Note newNote = new Nota(time, type);
+        //noteList.InsertNodeAtEnd(newNote);
     }
 
     public void AddNoteAtPosition(float time, int type, int position)
     {
-        Note newNote = new Note(time, type);
-        noteList.InsertNodeAtPosition(newNote, position);
+        //Note newNote = new Nota(time, type);
+        //noteList.InsertNodeAtPosition(newNote, position);
     }
 
     public void DeleteNoteAtPosition(int position)
@@ -23,17 +23,17 @@ public class NoteManager : MonoBehaviour
         noteList.DeleteNodeAtPosition(position);
     }
 
-    public void DeleteNoteByValue(Note note)
+    public void DeleteNoteByValue(Nota note)
     {
-        noteList.DeleteNode(note);
+       // noteList.DeleteNode(nota);
     }
 
     public void PrintAllNotes()
     {
         for (int i = 0; i < noteList.GetLength(); i++)
         {
-            Note note = noteList.GetNodeAtPosition(i);
-            Debug.Log("Time: " + note.time + ", Type: " + note.type);
+          //  Note note = noteList.GetNodeAtPosition(i);
+          //  Debug.Log("Time: " + note.time + ", Type: " + note.type);
         }
     }
 }

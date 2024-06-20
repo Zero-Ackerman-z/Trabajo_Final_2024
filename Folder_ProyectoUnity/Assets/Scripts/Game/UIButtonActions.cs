@@ -17,14 +17,21 @@ public class UIButtonActions : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenuScene");
+
     }
     public void OnStoryMode()
     {
         Debug.Log("Story Mode button clicked!");
         SceneManager.LoadScene("StoryModeScenes");
+    }
+    public void Week1()
+    {
+        Debug.Log("Story Mode button clicked!");
+        SceneManager.LoadScene("GameplayScene");
     }
     public void OnFreePlay()
     {

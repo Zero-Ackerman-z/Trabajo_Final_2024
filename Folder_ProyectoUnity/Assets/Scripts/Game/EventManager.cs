@@ -17,10 +17,5 @@ public class EventManager : MonoBehaviour
     public static void CompleteFlashEffect()
     {
         onFlashComplete?.Invoke();
-        UIManajerPantallaprincipal uiManager = FindObjectOfType<UIManajerPantallaprincipal>();
-        if (uiManager != null)
-        {
-            uiManager.ActivateFlashCompletionButton();
-        }
     }
 }

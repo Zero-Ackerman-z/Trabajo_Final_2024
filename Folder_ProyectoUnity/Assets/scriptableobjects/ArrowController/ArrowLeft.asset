@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2d3f486265c8e4fb5454edc3936c58, type: 3}
+  m_Name: ArrowLeft
+  m_EditorClassIdentifier: 
+  normalSprite: {fileID: 21300000, guid: f195273bf60ecf347b8e5c898b3b6fbe, type: 3}
+  pressedSprite: {fileID: 21300000, guid: cfccbcf4bcde1b241a4c73e7b1d32795, type: 3}
+  hitSprite: {fileID: 21300000, guid: 60371c979e35d0148b28d7918d85fa21, type: 3}

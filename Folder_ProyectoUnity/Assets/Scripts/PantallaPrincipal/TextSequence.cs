@@ -4,18 +4,17 @@ using UnityEngine;
 using TMPro;
 public class TextSequence : MonoBehaviour
 {
+    [Header("UI Elements")]
     public TextMeshProUGUI textMeshPro;
-    public float wordInterval; // Intervalo entre cada palabra
-    public float rowInterval; // Intervalo entre cada fila
 
-    private string[] rows = new string[]
-    {
-        "Friday Night Funki",
-        "VS",
-        "GV"
-    };
+    [Header("Timing Settings")]
+    public float wordInterval = 0.5f;
+    public float rowInterval = 1.0f;
 
-    void Start()
+    [Header("Text Content")]
+    public string[] rows = { "Friday Night Funki", "VS", "GV" };
+
+    private void Start()
     {
         if (textMeshPro == null)
         {
@@ -26,20 +25,19 @@ public class TextSequence : MonoBehaviour
         StartCoroutine(ShowTextSequence());
     }
 
-    IEnumerator ShowTextSequence()
+    private IEnumerator ShowTextSequence()
     {
         for (int i = 0; i < rows.Length; i++)
         {
-            ShowRow(rows[i]); // Mostrar la fila
+            ShowRow(rows[i]);
             yield return new WaitForSeconds(rowInterval);
-
         }
         textMeshPro.gameObject.SetActive(false);
-        EventManager.StartFlashEffect(); // Llamar al evento del flash
+        EventManager.StartFlashEffect();
     }
 
-    void ShowRow(string row)
+    private void ShowRow(string row)
     {
-        textMeshPro.text += row + "\n"; // Añadir la fila al TextMeshPro con un salto de línea
+        textMeshPro.text += row + "\n";
     }
 }

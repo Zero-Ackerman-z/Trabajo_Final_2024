@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648e7f1d1cdbca4468c8877f067f67c2, type: 3}
+  m_Name: GameModeSettings
+  m_EditorClassIdentifier: 
+  currentModeIndex: 2
+  modes:
+  - modeName: DFJK
+    actions:
+    - {fileID: -682992460570850488, guid: f6c53f55a0529b84887876d86ae8a5a2, type: 3}
+    - {fileID: -1398681394679674876, guid: f6c53f55a0529b84887876d86ae8a5a2, type: 3}
+    - {fileID: -1246945039686121818, guid: f6c53f55a0529b84887876d86ae8a5a2, type: 3}
+    - {fileID: -8391013385377350416, guid: f6c53f55a0529b84887876d86ae8a5a2, type: 3}
+  - modeName: AWSD
+    actions:
+    - {fileID: 4097151121322119519, guid: f6c53f55a0529b84887876d86ae8a5a2, type: 3}
+    - {fileID: -5608003955330464767, guid: f6c53f55a0529b84887876d86ae8a5a2, type: 3}
+    - {fileID: 3277713191333583151, guid: f6c53f55a0529b84887876d86ae8a5a2, type: 3}
+    - {fileID: 6746309545422989621, guid: f6c53f55a0529b84887876d86ae8a5a2, type: 3}
+  - modeName: Flechar
+    actions:
+    - {fileID: -6922522897998267846, guid: f6c53f55a0529b84887876d86ae8a5a2, type: 3}
+    - {fileID: 2938832894419291460, guid: f6c53f55a0529b84887876d86ae8a5a2, type: 3}
+    - {fileID: 2508721195581774596, guid: f6c53f55a0529b84887876d86ae8a5a2, type: 3}
+    - {fileID: 6035376935257006525, guid: f6c53f55a0529b84887876d86ae8a5a2, type: 3}

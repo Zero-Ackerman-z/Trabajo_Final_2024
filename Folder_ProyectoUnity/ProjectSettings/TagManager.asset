@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Right
+  - Left
+  - Up
+  - Down
+  - ScoringZone
+  - Boundary
+  - Node
   layers:
   - Default
   - TransparentFX

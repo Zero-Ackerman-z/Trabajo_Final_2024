@@ -1,0 +1,1097 @@
+fileFormatVersion: 2
+guid: d56f68153c58133448f57e8708b58349
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 704
+        width: 110
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e1ab833fad67544b0722514f03f42a
+      internalID: 1239740504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 702
+        width: 110
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc580a2dad5c6ab4ca8ef33dc3febc05
+      internalID: -812622939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_2
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 701
+        width: 110
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 966d74d7fe27c5f419e18d13b921eea8
+      internalID: 479567900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_3
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 700
+        width: 81
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d0062741bda857489df4378fbe97171
+      internalID: -1477061642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_4
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 703
+        width: 84
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb976b3e9b8f0047861b1d2ffd395da
+      internalID: -1809397002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_5
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 702
+        width: 93
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0649686a3a68ca4780fc4a256ea19ef
+      internalID: 1453653942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_6
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 703
+        width: 85
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e995a3a6a7aa6844b6f2fee0983283e
+      internalID: -2104721579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_7
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 704
+        width: 107
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2640c5ac10472f64497fc8d48847ebbc
+      internalID: 757266599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_8
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 704
+        width: 118
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 725afb3dfa267974ca4a434b51f68c0a
+      internalID: 512056157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_9
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 548
+        width: 122
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22656030a56dcbd409f3dae807ba7be2
+      internalID: -324923584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_10
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 551
+        width: 84
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a05aad80ac4935b47b9a1e0e98d6d3ac
+      internalID: -679985254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_11
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 548
+        width: 106
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d986b419f4ffd2408df00c5aad0f805
+      internalID: -815434859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_12
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 548
+        width: 122
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 478b2ae717f6bc2478932c5cefc7115a
+      internalID: -282280352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_13
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 550
+        width: 112
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1b9852b120f234a9be246981b9a4b7
+      internalID: -2050635053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_14
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 548
+        width: 131
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c30faf55d7a97449e1c8c79a6fdcdf
+      internalID: -1062236109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_15
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 550
+        width: 115
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8aead780a9dddf46b346597af86e8ec
+      internalID: -1763731427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_17
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 550
+        width: 119
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c572467363b71d4eb9a41eb914e6ba6
+      internalID: 835363099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_18
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 413
+        width: 119
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93021a7a7f406241ba6eae5da2e33bc
+      internalID: -2139429900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_19
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 414
+        width: 120
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d1b34a584a2a394396e22af2ce319f7
+      internalID: -1624769040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_20
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 416
+        width: 120
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e15d859e49c664f995bf761c56466c
+      internalID: 827227693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_21
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 415
+        width: 114
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e155ee677a223074a8559e4e0d2bf303
+      internalID: -1470933717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_22
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 414
+        width: 116
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7775c892498194b4fb3e3a858b7fc3d7
+      internalID: 1745129732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_23
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 412
+        width: 119
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74811bb67efe8fb47a789d4a9449b7ae
+      internalID: -747821658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_25
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 416
+        width: 119
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e54939f95debf409ad64204a2d380b
+      internalID: -1806006786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_27
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 285
+        width: 126
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb3ebcd2c7847044fb7bc79d231fe51b
+      internalID: -1655204879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_28
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 283
+        width: 108
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da68be8843e0ce479d06ad9a9c2cbd6
+      internalID: -520990187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_29
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 285
+        width: 109
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a70ed70cead43f46bd65dd803eb141a
+      internalID: -1800877323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_30
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 286
+        width: 90
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a28e74f5e8c5f47a8738a58a0dde39
+      internalID: 1083791766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_31
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 284
+        width: 123
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52215852ccd0cd4439b8a9422d376cf2
+      internalID: 380359872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_32
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 281
+        width: 105
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d13d229a881f94b8a187815e76a3ef
+      internalID: -2090978851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_33
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 281
+        width: 113
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdcf4307a6b1b2a4ba4bd750ce25312c
+      internalID: 61749374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_34
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 282
+        width: 118
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f916869341041439f9c9a556888955
+      internalID: 1884533839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_36
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 129
+        width: 119
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4567d57b7987e52439f820a4dc114bad
+      internalID: 1358569369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_37
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 131
+        width: 124
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd1a4dcb7901c74499c1b2186e8682b2
+      internalID: 964105189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_38
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 133
+        width: 93
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 453a7c64ddc520a48aed84ce8330231c
+      internalID: 617254065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_39
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 131
+        width: 85
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 746a4e9fb4f3e3749897c5eb6402d326
+      internalID: 1317453571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_40
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 132
+        width: 121
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3cc74ed886425f499c904dd2a81722c
+      internalID: 724966088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_41
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 131
+        width: 125
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f2ca19ec31f6a418ef76db22fd3358
+      internalID: -198756497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_42
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 130
+        width: 114
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5129f12dd6169b046895290efe26cb32
+      internalID: 1242975277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_43
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 128
+        width: 130
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16aa38e3c75756b4d978515420ce3c91
+      internalID: 612413890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 124
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df43b30daaed3de4c9b089c0a94f8c35
+      internalID: 913497557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_46
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 124
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fadc513b2a73e24c8c19e7bd18dbef5
+      internalID: -1106084625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Azure Striker Gunvolt - Portraits_48
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1
+        width: 110
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd58c7c337d83344eb29af2118c9d8ce
+      internalID: 192599885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      3DS - Azure Striker Gunvolt - Portraits_0: 1239740504
+      3DS - Azure Striker Gunvolt - Portraits_1: -812622939
+      3DS - Azure Striker Gunvolt - Portraits_10: -679985254
+      3DS - Azure Striker Gunvolt - Portraits_11: -815434859
+      3DS - Azure Striker Gunvolt - Portraits_12: -282280352
+      3DS - Azure Striker Gunvolt - Portraits_13: -2050635053
+      3DS - Azure Striker Gunvolt - Portraits_14: -1062236109
+      3DS - Azure Striker Gunvolt - Portraits_15: -1763731427
+      3DS - Azure Striker Gunvolt - Portraits_16: 1874094275
+      3DS - Azure Striker Gunvolt - Portraits_17: 835363099
+      3DS - Azure Striker Gunvolt - Portraits_18: -2139429900
+      3DS - Azure Striker Gunvolt - Portraits_19: -1624769040
+      3DS - Azure Striker Gunvolt - Portraits_2: 479567900
+      3DS - Azure Striker Gunvolt - Portraits_20: 827227693
+      3DS - Azure Striker Gunvolt - Portraits_21: -1470933717
+      3DS - Azure Striker Gunvolt - Portraits_22: 1745129732
+      3DS - Azure Striker Gunvolt - Portraits_23: -747821658
+      3DS - Azure Striker Gunvolt - Portraits_24: 1974987445
+      3DS - Azure Striker Gunvolt - Portraits_25: -1806006786
+      3DS - Azure Striker Gunvolt - Portraits_26: -578267890
+      3DS - Azure Striker Gunvolt - Portraits_27: -1655204879
+      3DS - Azure Striker Gunvolt - Portraits_28: -520990187
+      3DS - Azure Striker Gunvolt - Portraits_29: -1800877323
+      3DS - Azure Striker Gunvolt - Portraits_3: -1477061642
+      3DS - Azure Striker Gunvolt - Portraits_30: 1083791766
+      3DS - Azure Striker Gunvolt - Portraits_31: 380359872
+      3DS - Azure Striker Gunvolt - Portraits_32: -2090978851
+      3DS - Azure Striker Gunvolt - Portraits_33: 61749374
+      3DS - Azure Striker Gunvolt - Portraits_34: 1884533839
+      3DS - Azure Striker Gunvolt - Portraits_35: -1008528184
+      3DS - Azure Striker Gunvolt - Portraits_36: 1358569369
+      3DS - Azure Striker Gunvolt - Portraits_37: 964105189
+      3DS - Azure Striker Gunvolt - Portraits_38: 617254065
+      3DS - Azure Striker Gunvolt - Portraits_39: 1317453571
+      3DS - Azure Striker Gunvolt - Portraits_4: -1809397002
+      3DS - Azure Striker Gunvolt - Portraits_40: 724966088
+      3DS - Azure Striker Gunvolt - Portraits_41: -198756497
+      3DS - Azure Striker Gunvolt - Portraits_42: 1242975277
+      3DS - Azure Striker Gunvolt - Portraits_43: 612413890
+      3DS - Azure Striker Gunvolt - Portraits_44: 1047260208
+      3DS - Azure Striker Gunvolt - Portraits_45: 913497557
+      3DS - Azure Striker Gunvolt - Portraits_46: -1106084625
+      3DS - Azure Striker Gunvolt - Portraits_47: -1107670069
+      3DS - Azure Striker Gunvolt - Portraits_48: 192599885
+      3DS - Azure Striker Gunvolt - Portraits_49: -1551044039
+      3DS - Azure Striker Gunvolt - Portraits_5: 1453653942
+      3DS - Azure Striker Gunvolt - Portraits_50: -1770088387
+      3DS - Azure Striker Gunvolt - Portraits_51: -1878174496
+      3DS - Azure Striker Gunvolt - Portraits_52: 318039547
+      3DS - Azure Striker Gunvolt - Portraits_53: -1969780189
+      3DS - Azure Striker Gunvolt - Portraits_6: -2104721579
+      3DS - Azure Striker Gunvolt - Portraits_7: 757266599
+      3DS - Azure Striker Gunvolt - Portraits_8: 512056157
+      3DS - Azure Striker Gunvolt - Portraits_9: -324923584
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

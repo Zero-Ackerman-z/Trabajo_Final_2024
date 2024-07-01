@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 public class FlashEffect : MonoBehaviour
 {
+    [Header("Flash Settings")]
     public Image flashImage;
     public float flashDuration = 0.1f;
     public float fadeDuration = 1.0f;
 
     private void OnEnable()
     {
-        flashImage.enabled = false; // Desactivar la imagen al inicio
+        flashImage.enabled = false;
         EventManager.onFlash += StartFlashEffect;
     }
 
@@ -26,18 +27,15 @@ public class FlashEffect : MonoBehaviour
 
     private IEnumerator FlashCoroutine()
     {
-        flashImage.enabled = true; // Activar la imagen al iniciar el flash
-
+        flashImage.enabled = true;
         float startTime = Time.time;
 
-        // Flash blanco
         while (Time.time < startTime + flashDuration)
         {
             flashImage.color = Color.white;
             yield return null;
         }
 
-        // Desvanecimiento
         float endTime = startTime + flashDuration + fadeDuration;
         while (Time.time < endTime)
         {
@@ -46,7 +44,7 @@ public class FlashEffect : MonoBehaviour
             yield return null;
         }
 
-        flashImage.enabled = false; // Desactivar la imagen al finalizar el flash
-        EventManager.CompleteFlashEffect();
+        flashImage.enabled = false;
+        EventManager.CompleteFlash();
     }
 }

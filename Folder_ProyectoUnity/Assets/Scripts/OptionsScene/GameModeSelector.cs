@@ -1,60 +1,83 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class GameModeSelector : MonoBehaviour
-{
-    public TextMeshProUGUI modeText;
-    public string[] modes = { "Flechas", "DFJK", "AWSD" };
-    private int currentModeIndex = 0;
-    public Button leftButton;
-    public Button rightButton;
 
-    private void Start()
-    {
-        currentModeIndex = PlayerPrefs.GetInt("GameMode", 0);
-        UpdateModeText();
-    }
+public class SettingsSelector : MonoBehaviour
+{
+    [Header("Screen Mode Settings")]
+    public Button screenModeLeftButton;
+    public Button screenModeRightButton;
+    public TextMeshProUGUI screenModeDisplay;
+    public ScreenModeSettings screenModeSettings;
+
+    [Header("Arrow Direction Settings")]
+    public Button arrowDirectionLeftButton;
+    public Button arrowDirectionRightButton;
+    public TextMeshProUGUI arrowDirectionDisplay;
+    public DirectionSettings directionSettings;
+
+    [Header("Game Mode Settings")]
+    public TextMeshProUGUI gameModeDisplay;
+    public Button gameModeLeftButton;
+    public Button gameModeRightButton;
+    public GameModeSettings gameModeSettings;
 
     private void OnEnable()
     {
-        leftButton.onClick.AddListener(ChangeModeLeft);
-        rightButton.onClick.AddListener(ChangeModeRight);
+        // Configurar los botones de izquierda y derecha
+        screenModeLeftButton.onClick.AddListener(() => ChangeScreenMode(-1));
+        screenModeRightButton.onClick.AddListener(() => ChangeScreenMode(1));
+
+        arrowDirectionLeftButton.onClick.AddListener(() => ChangeArrowDirection(-1));
+        arrowDirectionRightButton.onClick.AddListener(() => ChangeArrowDirection(1));
+
+        gameModeLeftButton.onClick.AddListener(() => ChangeGameMode(-1));
+        gameModeRightButton.onClick.AddListener(() => ChangeGameMode(1));
+
+        UpdateDisplays();
     }
 
-    private void OnDisable()
+    // Método para cambiar el modo de pantalla
+    public void ChangeScreenMode(int direction)
     {
-        leftButton.onClick.RemoveListener(ChangeModeLeft);
-        rightButton.onClick.RemoveListener(ChangeModeRight);
+        screenModeSettings.ChangeMode(direction);
+        UpdateScreenModeDisplay();
     }
 
-    public void ChangeModeLeft()
+    // Método para cambiar la dirección de la flecha
+    public void ChangeArrowDirection(int direction)
     {
-        currentModeIndex = (currentModeIndex - 1 + modes.Length) % modes.Length;
-        UpdateModeText();
-        AudioManager.Instance?.PlaySelectSFX();
-        SaveMode();
+        directionSettings.ChangeDirection(direction);
+        //UpdateArrowDirectionDisplay();
     }
 
-    public void ChangeModeRight()
+    // Método para cambiar el modo de juego
+    public void ChangeGameMode(int direction)
     {
-        currentModeIndex = (currentModeIndex + 1) % modes.Length;
-        UpdateModeText();
-        AudioManager.Instance?.PlaySelectSFX();
-        SaveMode();
+        gameModeSettings.ChangeMode(direction);
+        UpdateGameModeDisplay();
     }
 
-    private void UpdateModeText()
+    // Actualiza los textos de pantalla, dirección y modo de juego
+    private void UpdateDisplays()
     {
-        modeText.text = modes[currentModeIndex];
+        UpdateScreenModeDisplay();
+        //UpdateArrowDirectionDisplay();
+        UpdateGameModeDisplay();
     }
 
-    private void SaveMode()
+    private void UpdateScreenModeDisplay()
     {
-        PlayerPrefs.SetInt("GameMode", currentModeIndex);
-        PlayerPrefs.Save();
+        screenModeDisplay.text = screenModeSettings.GetCurrentMode();
     }
 
-    
+   /* private void UpdateArrowDirectionDisplay()
+    {
+        arrowDirectionDisplay.text = directionSettings.GetCurrentDirection();
+    }*/
+
+    private void UpdateGameModeDisplay()
+    {
+        gameModeDisplay.text = gameModeSettings.GetCurrentMode();
+    }
 }

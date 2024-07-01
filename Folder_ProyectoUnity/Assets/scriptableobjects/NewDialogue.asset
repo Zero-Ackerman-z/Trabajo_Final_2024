@@ -13,5 +13,21 @@ MonoBehaviour:
   m_Name: NewDialogue
   m_EditorClassIdentifier: 
   dialogueEntries:
-  - characterName: zzzzzzzzzzzzz
-    dialogueText: asdfghjkududhgcgcgdgxgxxhhfxhhxfxfxfxffxffxvvgvgvjvjvjjgjjvjgvjvgvvjgvjvgjvgccdrdryftjvjvjvjvvjgvjcc
+  - dialogueName: ssss
+    text: dwhedvgwvdjwdjwebdjwbdkjwbdwbedk
+    characterSprite: {fileID: 479567900, guid: d56f68153c58133448f57e8708b58349, type: 3}
+    isBF: 0
+    changeMusic: 0
+    newMusic: {fileID: 8300000, guid: a0bc5781828c08d4aadca3e92bc3b839, type: 3}
+  - dialogueName: sssssssssssssssqq
+    text: knkwnkwndkwndkwnkedenwkdnkew
+    characterSprite: {fileID: 1239740504, guid: d56f68153c58133448f57e8708b58349, type: 3}
+    isBF: 1
+    changeMusic: 0
+    newMusic: {fileID: 8300000, guid: 3d84a596f656a3c49a76a2b82940693a, type: 3}
+  - dialogueName: qwqeqweqw
+    text: n dmw dkmwdkwednkwendk
+    characterSprite: {fileID: -812622939, guid: d56f68153c58133448f57e8708b58349, type: 3}
+    isBF: 1
+    changeMusic: 1
+    newMusic: {fileID: 0}

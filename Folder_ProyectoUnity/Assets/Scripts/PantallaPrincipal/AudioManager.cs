@@ -1,24 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance { get; private set; } // Singleton
+    public static AudioManager Instance { get; private set; }
+
+    [Header("Audio Sources")]
     public AudioSource backgroundMusic;
-    public AudioSource sfx;
-    public AudioClip selectSFX; // SFX para selección
-    public AudioClip navigateSFX; // SFX para navegación
+    public AudioSource sfxSource;
+
+    [Header("Audio Clips")]
+    public AudioClip selectSFX;
+    public AudioClip navigateSFX;
+    public AudioClip letterSound; 
+
+    [Header("Settings")]
+    public float fadeDuration = 1f;
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // No destruir el objeto al cargar una nueva escena
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject); // Destruir el objeto si ya existe una instancia
+            Destroy(gameObject);
         }
     }
 
@@ -26,16 +36,15 @@ public class AudioManager : MonoBehaviour
     {
         if (backgroundMusic != null && !backgroundMusic.isPlaying)
         {
-            backgroundMusic.Play(); // Reproducir música de fondo si no está reproduciéndose
+            backgroundMusic.Play();
         }
     }
-
 
     public void PlaySelectSFX()
     {
         if (selectSFX != null)
         {
-            sfx.PlayOneShot(selectSFX); // Reproducir SFX de selección
+            sfxSource.PlayOneShot(selectSFX);
         }
     }
 
@@ -43,7 +52,24 @@ public class AudioManager : MonoBehaviour
     {
         if (navigateSFX != null)
         {
-            sfx.PlayOneShot(navigateSFX); // Reproducir SFX de navegación
+            sfxSource.PlayOneShot(navigateSFX);
         }
+    }
+    public void PlayLetterSound()
+    {
+        if (letterSound != null)
+        {
+            sfxSource.PlayOneShot(letterSound);
+        }
+    }
+    public void PlayMusic(AudioClip clip)
+    {
+        if (backgroundMusic.clip == clip) return;
+        backgroundMusic.DOFade(0, fadeDuration).OnComplete(() =>
+        {
+            backgroundMusic.clip = clip;
+            backgroundMusic.Play();
+            backgroundMusic.DOFade(1, fadeDuration);
+        });
     }
 }

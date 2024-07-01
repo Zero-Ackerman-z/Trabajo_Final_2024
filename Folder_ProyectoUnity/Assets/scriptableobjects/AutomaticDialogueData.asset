@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5e9f2c038b6a74dafdd9d18f0c314d, type: 3}
+  m_Name: AutomaticDialogueData
+  m_EditorClassIdentifier: 
+  dialogueEntries:
+  - dialogueName: aaaaaaaaaa
+    text: bsakbsakdbkdsbksabdkasbdkabdskasbxksbaxkbdkqwhdwakawbdkwbdkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkdhwwwwwwwwwwwwwwwwwwwwwwwwww
+    backgroundImage: {fileID: -1470933717, guid: d56f68153c58133448f57e8708b58349, type: 3}
+    changeMusic: 1
+    newMusic: {fileID: 8300000, guid: 3d84a596f656a3c49a76a2b82940693a, type: 3}
+  - dialogueName: aaaaaaaaaa
+    text: "uvidcknsdlcjwlsfjcpwjdcp\xF1sdc\xF1sjc\xB4w\xF1sdcj\xB4wsdjc\xB4sdjcp\xF1dsjcsjdvlsmclsmdvlslvnslvnldsvnlsdnvlsnvldsnvldsnvldsnvldsvldsclkdmldmdmcdmclmcdkdkdkdkdkdkdkdkkkkslslslslcll"
+    backgroundImage: {fileID: 1745129732, guid: d56f68153c58133448f57e8708b58349, type: 3}
+    changeMusic: 0
+    newMusic: {fileID: 8300000, guid: 3d84a596f656a3c49a76a2b82940693a, type: 3}
+  - dialogueName: aaaaaaaaaa
+    text: "hudiwhdoqhadkw{ck\xF1snclsnvlfjmvevlsmv\xF1wmv\xF1wm\xF1vmw\xF1"
+    backgroundImage: {fileID: -1800877323, guid: d56f68153c58133448f57e8708b58349, type: 3}
+    changeMusic: 1
+    newMusic: {fileID: 8300000, guid: a0bc5781828c08d4aadca3e92bc3b839, type: 3}

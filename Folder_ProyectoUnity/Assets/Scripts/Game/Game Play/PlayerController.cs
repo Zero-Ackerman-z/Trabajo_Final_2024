@@ -130,19 +130,17 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Button F Pressed");
         arrowUp.SetPressedSprite();
-        CheckHit("Up");
+
+        CheckHit("Down");
 
 
     }
 
     private void OnJPressed(InputAction.CallbackContext context)
     {
-        Debug.Log("Button J Pressed");
+        Debug.Log("Button J Pressd");
         arrowDown.SetPressedSprite();
-        CheckHit("Down");
-
-
-
+        CheckHit("Up");
     }
 
     private void OnKPressed(InputAction.CallbackContext context)
@@ -150,9 +148,6 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Button K Pressed");
         arrowRight.SetPressedSprite();
         CheckHit("Right");
-
-
-
     }
 
     private void OnAPressed(InputAction.CallbackContext context)
@@ -160,34 +155,23 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Button A Pressed");
         arrowLeft.SetPressedSprite();
         CheckHit("Left");
-
-
     }
     private void OnSPressed(InputAction.CallbackContext context)
     {
         Debug.Log("Button S Pressed");
         arrowDown.SetPressedSprite();
         CheckHit("Down");
-
-
     }
     private void OnWPressed(InputAction.CallbackContext context)
     {
         Debug.Log("Button W Pressed");
         arrowUp.SetPressedSprite();
         CheckHit("Up");
-
-
     }
     private void OnD1Pressed(InputAction.CallbackContext context)
     {
-
         arrowRight.SetPressedSprite();
         CheckHit("Right");
-
-
-
-
     }
     private void OnFlechasLeftPressed(InputAction.CallbackContext context)
     {
@@ -306,7 +290,7 @@ public class PlayerController : MonoBehaviour
 
             if (arrow.CompareTag(direction))
             {
-                if (arrow.transform.localPosition.y >= 640f && arrow.transform.localPosition.y < 800f)
+                if (arrow.transform.localPosition.y >= 2300f && arrow.transform.localPosition.y < 2500f)
                 {
                     arrow.MarkAsHit();
                     switch (direction)
@@ -318,10 +302,11 @@ public class PlayerController : MonoBehaviour
                             arrowRight.SetHitSprite();
                             break;
                         case "Up":
-                            arrowUp.SetHitSprite();
+                            arrowDown.SetHitSprite();
                             break;
                         case "Down":
-                            arrowDown.SetHitSprite();
+                            arrowUp.SetHitSprite();
+
                             break;
                     }
                     break; // Salir del bucle una vez que se encuentre y destruya la flecha adecuada

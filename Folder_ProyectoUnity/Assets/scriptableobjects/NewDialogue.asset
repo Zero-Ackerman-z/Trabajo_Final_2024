@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: NewDialogue
   m_EditorClassIdentifier: 
   dialogueEntries:
-  - dialogueName: ssss
-    text: dwhedvgwvdjwdjwebdjwbdkjwbdwbedk
-    characterSprite: {fileID: 479567900, guid: d56f68153c58133448f57e8708b58349, type: 3}
+  - dialogueName: Contexto
+    text: "En un futuro no muy lejano, el mundo ha avanzado a pasos agigantados en
+      tecnolog\xEDa y ciencia. La humanidad ha alcanzado nuevos horizontes, pero
+      con estos avances han llegado nuevos desaf\xEDos. Una era de poderes asombrosos
+      y tecnolog\xEDa sobrehumana ha comenzado."
+    characterSprite: {fileID: -1140915481, guid: 7baec22b3aa5ecb42bfb996c2309ef67, type: 3}
     isBF: 0
     changeMusic: 0
     newMusic: {fileID: 8300000, guid: a0bc5781828c08d4aadca3e92bc3b839, type: 3}

@@ -13,18 +13,60 @@ MonoBehaviour:
   m_Name: AutomaticDialogueData
   m_EditorClassIdentifier: 
   dialogueEntries:
-  - dialogueName: aaaaaaaaaa
-    text: bsakbsakdbkdsbksabdkasbdkabdskasbxksbaxkbdkqwhdwakawbdkwbdkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkdhwwwwwwwwwwwwwwwwwwwwwwwwww
-    backgroundImage: {fileID: -1470933717, guid: d56f68153c58133448f57e8708b58349, type: 3}
+  - dialogueName: Contexto
+    text: "En un futuro no muy lejano, el mundo ha avanzado a pasos agigantados en
+      tecnolog\xEDa y ciencia. La humanidad ha alcanzado nuevos horizontes, pero
+      con estos avances han llegado nuevos desaf\xEDos. Una era de poderes asombrosos
+      y tecnolog\xEDa sobrehumana ha comenzado.\n\nEntre estos avances, surgi\xF3
+      un fen\xF3meno inesperado: los \"septimos\". Individuos dotados de habilidades
+      extraordinarias, conocidos como \"poderes septimales\", que les otorgan capacidades
+      sobrehumanas."
+    backgroundImage: {fileID: -1140915481, guid: 7baec22b3aa5ecb42bfb996c2309ef67, type: 3}
     changeMusic: 1
     newMusic: {fileID: 8300000, guid: 3d84a596f656a3c49a76a2b82940693a, type: 3}
-  - dialogueName: aaaaaaaaaa
-    text: "uvidcknsdlcjwlsfjcpwjdcp\xF1sdc\xF1sjc\xB4w\xF1sdcj\xB4wsdjc\xB4sdjcp\xF1dsjcsjdvlsmclsmdvlslvnslvnldsvnlsdnvlsnvldsnvldsnvldsnvldsvldsclkdmldmdmcdmclmcdkdkdkdkdkdkdkdkkkkslslslslcll"
-    backgroundImage: {fileID: 1745129732, guid: d56f68153c58133448f57e8708b58349, type: 3}
+  - dialogueName: Gunvolt
+    text: "En medio de este caos surge un h\xE9roe, un joven llamado Gunvolt, o GV
+      para sus aliados. Gunvolt es un septimo con la capacidad de manipular la electricidad
+      a su voluntad. Su misi\xF3n es liberar a aquellos que, como \xE9l, han sido
+      oprimidos por Sumeragi.\n\nGunvolt es enviado en una misi\xF3n crucial para
+      rescatar a Joule, una septimo con un poder \xFAnico: la capacidad de controlar
+      la canci\xF3n de Lumen, un poder que puede alterar el curso del destino. Joule
+      est\xE1 prisionera de Sumeragi, quien planea utilizar su habilidad para sus
+      propios fines oscuros."
+    backgroundImage: {fileID: -1729895645, guid: 7baec22b3aa5ecb42bfb996c2309ef67, type: 3}
     changeMusic: 0
     newMusic: {fileID: 8300000, guid: 3d84a596f656a3c49a76a2b82940693a, type: 3}
-  - dialogueName: aaaaaaaaaa
-    text: "hudiwhdoqhadkw{ck\xF1snclsnvlfjmvevlsmv\xF1wmv\xF1wm\xF1vmw\xF1"
-    backgroundImage: {fileID: -1800877323, guid: d56f68153c58133448f57e8708b58349, type: 3}
+  - dialogueName: Final?
+    text: "Gunvolt y Joule, despu\xE9s de una agotadora batalla contra los siete
+      jefes y finalmente contra Nova, logran la victoria. Sin embargo, su alegr\xEDa
+      es ef\xEDmera. Mientras intentan escapar, una sombra del pasado aparece, dispuesta
+      a terminar lo que Nova no pudo.\n\nUn arma letal, creada espec\xEDficamente
+      para acabar con los adeptos, ha sido disparada. La energ\xEDa maligna consume
+      sus cuerpos, y la vida de Gunvolt y Joule empieza a desvanecerse"
+    backgroundImage: {fileID: -1239414370, guid: 7baec22b3aa5ecb42bfb996c2309ef67, type: 3}
+    changeMusic: 0
+    newMusic: {fileID: 8300000, guid: 3d84a596f656a3c49a76a2b82940693a, type: 3}
+  - dialogueName: Sacrificio
+    text: "En su \xFAltimo acto de sacrificio, Joule utiliza su poder para curar
+      a Gunvolt, d\xE1ndole una segunda oportunidad. Pero este esfuerzo final le
+      cuesta la vida.\n\nGunvolt, salvado por el sacrificio de Joule, se queda solo
+      en un mundo que ahora parece vac\xEDo y sin esperanza. Su grito resuena en
+      la oscuridad, una mezcla de dolor, rabia y tristeza."
+    backgroundImage: {fileID: 731297527, guid: 7baec22b3aa5ecb42bfb996c2309ef67, type: 3}
     changeMusic: 1
     newMusic: {fileID: 8300000, guid: a0bc5781828c08d4aadca3e92bc3b839, type: 3}
+  - dialogueName: 'Dolor '
+    text: "Impulsado por la p\xE9rdida de Joule, Gunvolt se enfrenta a Asimov con
+      una furia y determinaci\xF3n renovadas. Durante la batalla, el poder de la
+      Musa, ahora fusionado con la esencia de Joule, le otorga la fuerza para prevalecer.\n\nGunvolt
+      ha ganado la batalla, pero la ausencia de Joule pesa sobre \xE9l."
+    backgroundImage: {fileID: 997167897, guid: 7baec22b3aa5ecb42bfb996c2309ef67, type: 3}
+    changeMusic: 0
+    newMusic: {fileID: 8300000, guid: a0bc5781828c08d4aadca3e92bc3b839, type: 3}
+  - dialogueName: Quienes son
+    text: "Una semana despu\xE9s, Gunvolt siente la presencia de un nuevo adepto.
+      Aunque su coraz\xF3n est\xE1 lleno de dolor, su deber lo llama a investigar
+      ............. "
+    backgroundImage: {fileID: -1140915481, guid: 7baec22b3aa5ecb42bfb996c2309ef67, type: 3}
+    changeMusic: 1
+    newMusic: {fileID: 8300000, guid: 533f40a76230f714da87ecd75187c9d5, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648e7f1d1cdbca4468c8877f067f67c2, type: 3}
   m_Name: GameModeSettings
   m_EditorClassIdentifier: 
-  currentModeIndex: 2
+  currentModeIndex: 0
   modes:
   - modeName: DFJK
     actions:

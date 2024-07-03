@@ -1,143 +1,150 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-public class MoveToFirstNodeAndNavigate : MonoBehaviour
+using UnityEngine.InputSystem;
+
+public class PlayerMovement : MonoBehaviour
 {
-    public GraphControl graphControl; // Referencia al GraphControl
-    public float movementSpeed = 5f; // Velocidad de movimiento del jugador
+    public GraphControl graphControl;  // Referencia al grafo
+    private NodeControl currentNode;   // Nodo actual al que se dirige el jugador
+    private MyHashSet<NodeControl> visitedNodes; // Conjunto de nodos visitados
+    private MyStack<NodeControl> nodeHistory; // Historial de nodos para permitir retroceso
+    private bool isNavigating; // Para evitar que se inicien múltiples navegaciones al mismo tiempo
+    private ActionsControllers controls; // Referencia a los controles de entrada
 
-    private bool hasMovedToFirstNode = false; // Bandera para evitar mover repetidamente
-    private NodeControl currentNode; // Nodo actual en el que está el jugador
-    private NodeControl targetNode; // Próximo nodo objetivo del jugador
-    private ActionsControllers controls; // Controlador de acciones del Input System
-    private Vector2 inputDirection; // Dirección del input actual
-
-    private void Awake()
+    void Start()
     {
-        // Configurar el controlador de acciones
+        // Asegurarse de que el GraphControl esté configurado correctamente
+        if (graphControl == null)
+        {
+            Debug.LogError("GraphControl is not assigned. Please assign it in the Inspector.");
+            return;
+        }
+
+        visitedNodes = new MyHashSet<NodeControl>();
+        nodeHistory = new MyStack<NodeControl>();
+        isNavigating = false;
+
+        // Configurar los controles de entrada
         controls = new ActionsControllers();
-        controls.PaneController.DFJKPanel.performed += ctx => OnMove(ctx.ReadValue<Vector2>());
-        controls.PaneController.DFJKPanel.canceled += ctx => OnMove(Vector2.zero); // Detener el movimiento cuando se libera la tecla
+        controls.PaneController.DFJKPanel.performed += ctx => OnDFJKPanelPressed(ctx);
+        controls.Enable();
+
+        // Comienza moviéndose al nodo 0
+        StartCoroutine(MoveToStartNode());
     }
 
-
-     void Start()
+    void OnDFJKPanelPressed(InputAction.CallbackContext context)
     {
-        // Acciones para activar al jugador
-        Debug.Log("Activando al jugador.");
-        gameObject.SetActive(true); // Ajusta según sea necesario para activar al jugador
-        MovePlayerToFirstNode();
-    }    
-        
+        Vector2 direction = context.ReadValue<Vector2>();
 
-    
-
-
-    void Update()
-    {
-        if (!hasMovedToFirstNode)
+        // Solo permitir movimientos horizontales o verticales
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
-            MovePlayerToFirstNode();
+            direction.y = 0f;
         }
         else
         {
-            if (targetNode == null)
-            {
-                HandleInput();
-            }
-            else
-            {
-                NavigateToNextNode();
-            }
+            direction.x = 0f;
+        }
+
+        Debug.Log($"DFJK Panel pressed with direction: {direction}");
+        if (!isNavigating)
+        {
+            MoveInDirection(direction);
         }
     }
 
-    void MovePlayerToFirstNode()
+    void MoveInDirection(Vector2 direction)
     {
-        // Verifica si GraphControl y la lista de nodos están disponibles
-        if (graphControl != null && graphControl.allNodes.Count > 0)
+        Debug.Log($"Attempting to move in direction: {direction}");
+        NodeControl nextNode = GetConnectedNodeInDirection(currentNode, direction);
+        if (nextNode != null)
         {
-            // Obtén la posición del primer nodo
-            currentNode = graphControl.allNodes[0];
-            Vector2 targetPosition = currentNode.transform.position;
-
-            // Mueve el jugador a la posición del primer nodo
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, movementSpeed * Time.deltaTime);
-
-            // Verifica si el jugador ha llegado a la posición del primer nodo
-            if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
-            {
-                transform.position = targetPosition; // Asegura la posición exacta
-                hasMovedToFirstNode = true; // Marca como movido
-                Debug.Log($"Player moved to the first node at position: {targetPosition}");
-            }
+            Debug.Log($"Found node in direction {direction}: {nextNode.nodeIndex}");
+            nodeHistory.Push(currentNode); // Añadir el nodo actual al historial
+            StartCoroutine(NavigateToNode(nextNode, false)); // false indica que es avance, no retroceso
         }
         else
         {
-            Debug.LogWarning("GraphControl or nodes list is null or empty.");
+            Debug.Log($"No node found in direction {direction}");
         }
     }
 
-    void HandleInput()
+    NodeControl GetConnectedNodeInDirection(NodeControl node, Vector2 direction)
     {
-        // Si hay una dirección de entrada, intenta mover al próximo nodo en esa dirección
-        if (inputDirection != Vector2.zero)
+        DoublyLinkedList<NodeControl> connectedNodes = node.GetConnectedNodes(); // Obtener la lista enlazada de nodos conectados
+
+        DoublyLinkedNode<NodeControl> currentLinkedNode = connectedNodes.Head; // Empezar desde el primer nodo
+
+        while (currentLinkedNode != null)
         {
-            SetNextTargetNode(inputDirection);
-        }
-    }
+            NodeControl connectedNode = currentLinkedNode.Data;
+            Vector2 toNode = connectedNode.transform.position - node.transform.position;
 
-    void NavigateToNextNode()
-    {
-        if (targetNode == null || currentNode == null) return;
-
-        // Mueve el jugador hacia el próximo nodo objetivo
-        Vector2 targetPosition = targetNode.transform.position;
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, movementSpeed * Time.deltaTime);
-
-        // Verifica si el jugador ha llegado a la posición del próximo nodo
-        if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
-        {
-            transform.position = targetPosition; // Asegura la posición exacta
-            currentNode = targetNode; // Actualiza el nodo actual al nodo objetivo
-            targetNode = null; // Reinicia el nodo objetivo
-            Debug.Log($"Player moved to node at position: {targetPosition}");
-        }
-    }
-
-    void SetNextTargetNode(Vector2 direction)
-    {
-        // Encuentra el nodo conectado que está más cercano en la dirección dada
-        NodeControl closestNode = null;
-        float closestDistance = float.MaxValue;
-
-        foreach (NodeControl connectedNode in currentNode.ConnectedNodes)
-        {
-            Vector2 toConnectedNode = (Vector2)connectedNode.transform.position - (Vector2)currentNode.transform.position;
-            if (Vector2.Dot(direction, toConnectedNode.normalized) > 0.8f) // Alineación en la dirección
+            // Verificar si el nodo conectado está en la dirección horizontal o vertical especificada
+            if (Mathf.Abs(direction.x) > 0 && Mathf.Approximately(toNode.normalized.x, direction.normalized.x))
             {
-                float distance = toConnectedNode.magnitude;
-                if (distance < closestDistance)
-                {
-                    closestDistance = distance;
-                    closestNode = connectedNode;
-                }
+                Debug.Log($"Connected node found in direction {direction}: {connectedNode.nodeIndex}");
+                return connectedNode;
             }
+            else if (Mathf.Abs(direction.y) > 0 && Mathf.Approximately(toNode.normalized.y, direction.normalized.y))
+            {
+                Debug.Log($"Connected node found in direction {direction}: {connectedNode.nodeIndex}");
+                return connectedNode;
+            }
+
+            currentLinkedNode = currentLinkedNode.Next; // Avanzar al siguiente nodo en la lista enlazada
         }
 
-        if (closestNode != null)
+        Debug.Log($"No connected node found in direction {direction}");
+        return null;
+    }
+
+    IEnumerator MoveToStartNode()
+    {
+        // Esperar un segundo para asegurarse de que todos los nodos estén instanciados
+        yield return new WaitForSeconds(1);
+
+        // Obtener el primer nodo (nodo 0)
+        currentNode = graphControl.GetNodeByIndex(0);
+        if (currentNode != null)
         {
-            targetNode = closestNode;
-            Debug.Log($"Next target node set to: {targetNode.transform.position}");
+            Debug.Log($"Starting at node: {currentNode.nodeIndex}");
+            nodeHistory.Push(currentNode); // Añadir el nodo inicial al historial
+            StartCoroutine(NavigateToNode(currentNode, false)); // false indica que es avance
         }
         else
         {
-            Debug.LogWarning("No connected node found in the desired direction.");
+            Debug.LogError("Initial node is null. Check node setup.");
         }
     }
 
-    // Método para manejar el input de movimiento
-    private void OnMove(Vector2 direction)
+    IEnumerator NavigateToNode(NodeControl targetNode, bool isBacktracking)
     {
-        inputDirection = direction;
+        Debug.Log($"Navigating to node {targetNode.nodeIndex}");
+        isNavigating = true;
+
+        // Mover hacia el nodo objetivo
+        while ((targetNode.transform.position - transform.position).sqrMagnitude > 0.01f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetNode.transform.position, Time.deltaTime * 5f);
+            yield return null;
+        }
+
+        Debug.Log($"Reached node {targetNode.nodeIndex}");
+        currentNode = targetNode;  // Actualiza el nodo actual
+        if (!isBacktracking)
+        {
+            visitedNodes.Add(currentNode); // Añadir el nodo visitado al conjunto
+        }
+
+        isNavigating = false;
+    }
+
+    private void OnDestroy()
+    {
+        controls.PaneController.DFJKPanel.performed -= ctx => OnDFJKPanelPressed(ctx);
+        controls.Disable();
     }
 }

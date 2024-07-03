@@ -11,11 +11,16 @@ TagManager:
   - ScoringZone
   - Boundary
   - Node
+  - LefEnmy
+  - UPEnemy
+  - DownEnemy
+  - RightEnemy
+  - EnemyLImit
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - arrowLayerMask
   - Water
   - UI
   - 

@@ -1,37 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class GraphControl : MonoBehaviour
 {
-    public GameObject nodePrefab;
-    public TextAsset nodePositionsTxt;
-    public string[] arrayNodePositions;
-    public string[] currentNodePositions;
-    public TextAsset nodeConnectionsTxt;
-    public string[] arrayNodeConnections;
-    public string[] currentNodeConnections;
-    public List<NodeControl> allNodes = new List<NodeControl>();
-    private void OnEnable()
-    {
-        // Suscribirse al evento para activar el grafo cuando se abra el panel de advertencia
-    }
+    public GameObject nodePrefab;  // Prefab para los nodos
+    public TextAsset nodePositionsTxt;  // Archivo de texto con posiciones de nodos
+    public string[] arrayNodePositions;  // Array para almacenar las posiciones de nodos desde el archivo de texto
+    public string[] currentNodePositions;  // Array para posiciones actuales de los nodos
+    public TextAsset nodeConnectionsTxt;  // Archivo de texto con conexiones de nodos
+    public string[] arrayNodeConnections;  // Array para almacenar las conexiones de nodos desde el archivo de texto
+    public string[] currentNodeConnections;  // Array para conexiones actuales de los nodos
+    public DoublyLinkedList<NodeControl> allNodes = new DoublyLinkedList<NodeControl>();  // Lista de todos los nodos creados
 
-    private void OnDisable()
-    {
-        // Asegurarse de desuscribirse del evento al desactivar el objeto
-    }
     private void Start()
     {
-        ActivateGraph();
-    }
-    private void ActivateGraph()
-    {
-        // Acciones para activar el grafo
         Debug.Log("Activando el grafo.");
-        gameObject.SetActive(true); // Ajusta según sea necesario para activar el grafo
-        CreateNodes();
-        CreateConnections();
+        CreateNodes();  // Crear nodos
+        CreateConnections();  // Crear conexiones
 
         if (allNodes.Count > 0)
         {
@@ -43,33 +28,35 @@ public class GraphControl : MonoBehaviour
         }
     }
 
-
     void CreateNodes()
     {
         if (nodePositionsTxt != null)
         {
-            arrayNodePositions = nodePositionsTxt.text.Split('\n');
+            arrayNodePositions = nodePositionsTxt.text.Split('\n');  // Leer las posiciones de los nodos
             Debug.Log("Loaded node positions:");
+
             for (int i = 0; i < arrayNodePositions.Length; i++)
             {
-                currentNodePositions = arrayNodePositions[i].Trim().Split(',');
+                currentNodePositions = arrayNodePositions[i].Trim().Split(',');  // Dividir cada línea en x e y
 
                 Debug.Log($"Processing line {i + 1}: {arrayNodePositions[i]}");
 
                 if (currentNodePositions.Length < 2)
                 {
-                    Debug.LogError("Invalid node position data at line " + (i + 1));
+                    Debug.LogError($"Invalid node position data at line {i + 1}");
                     continue;
                 }
 
                 if (float.TryParse(currentNodePositions[0], out float x) && float.TryParse(currentNodePositions[1], out float y))
                 {
-                    Vector2 position = new Vector2(x, y);
-                    GameObject tmp = Instantiate(nodePrefab, position, Quaternion.identity);
+                    Vector2 position = new Vector2(x, y);  // Crear la posición del nodo
+                    GameObject tmp = Instantiate(nodePrefab, position, Quaternion.identity);  // Instanciar el prefab del nodo en la posición dada
                     NodeControl nodeControl = tmp.GetComponent<NodeControl>();
+
                     if (nodeControl != null)
                     {
-                        allNodes.Add(nodeControl);
+                        allNodes.AddLast(nodeControl);
+                        nodeControl.nodeIndex = i;  // Asignar el índice del nodo
                         Debug.Log($"Created node at position: {position}");
                     }
                     else
@@ -79,7 +66,7 @@ public class GraphControl : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("Failed to parse node position data at line " + (i + 1));
+                    Debug.LogError($"Failed to parse node position data at line {i + 1}");
                 }
             }
         }
@@ -93,34 +80,41 @@ public class GraphControl : MonoBehaviour
     {
         if (nodeConnectionsTxt != null)
         {
-            arrayNodeConnections = nodeConnectionsTxt.text.Split('\n');
-            for (int i = 0; i < arrayNodeConnections.Length; ++i)
+            arrayNodeConnections = nodeConnectionsTxt.text.Split('\n');  // Leer las conexiones de los nodos
+
+            for (int i = 0; i < arrayNodeConnections.Length; i++)
             {
                 currentNodeConnections = arrayNodeConnections[i].Trim().Split(',');
 
-                int nodeIndex = i;
-                NodeControl nodeControl = allNodes[nodeIndex];
+                if (i >= allNodes.Count)
+                {
+                    Debug.LogError($"Node index {i} is out of bounds for allNodes list.");
+                    continue;
+                }
 
-                Debug.Log($"Processing connections for node {nodeIndex}: {arrayNodeConnections[i]}");
+                NodeControl nodeControl = allNodes.Get(i).Data; // Obtener el nodo de la lista enlazada
 
-                for (int j = 0; j < currentNodeConnections.Length; ++j)
+                Debug.Log($"Processing connections for node {i}: {arrayNodeConnections[i]}");
+
+                for (int j = 0; j < currentNodeConnections.Length; j++)
                 {
                     if (int.TryParse(currentNodeConnections[j], out int connectionIndex))
                     {
-                        if (connectionIndex < allNodes.Count && connectionIndex != nodeIndex)
+                        if (connectionIndex < allNodes.Count && connectionIndex != i)
                         {
-                            NodeControl targetNode = allNodes[connectionIndex];
+                            NodeControl targetNode = allNodes.Get(connectionIndex).Data; // Obtener el nodo de destino de la lista enlazada
                             nodeControl.AddConnectedNode(targetNode);
-                            Debug.Log($"Connected node {nodeIndex} to node {connectionIndex}");
+                            targetNode.AddConnectedNode(nodeControl);  // Conexión bidireccional
+                            Debug.Log($"Connected node {i} to node {connectionIndex}");
                         }
                         else
                         {
-                            Debug.LogError("Invalid node connection data at line " + (i + 1));
+                            Debug.LogError($"Invalid node connection data at line {i + 1}");
                         }
                     }
                     else
                     {
-                        Debug.LogError("Failed to parse node connection data at line " + (i + 1));
+                        Debug.LogError($"Failed to parse node connection data at line {i + 1}");
                     }
                 }
             }
@@ -128,6 +122,19 @@ public class GraphControl : MonoBehaviour
         else
         {
             Debug.LogError("nodeConnectionsTxt is null.");
+        }
+    }
+
+    public NodeControl GetNodeByIndex(int index)
+    {
+        if (index >= 0 && index < allNodes.Count)
+        {
+            return allNodes.Get(index).Data; // Obtener el nodo de la lista enlazada
+        }
+        else
+        {
+            Debug.LogError($"Index {index} is out of bounds for nodes list.");
+            return null;
         }
     }
 }

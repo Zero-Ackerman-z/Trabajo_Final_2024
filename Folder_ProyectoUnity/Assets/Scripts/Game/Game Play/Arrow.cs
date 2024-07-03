@@ -9,6 +9,7 @@ public class Arrow : MonoBehaviour
     private RectTransform rectTransform; 
     public bool isHit = false; 
     public VersusBarController versusBarController;
+
     private void Start()
     {
         gameController = FindObjectOfType<GameController>();
@@ -41,39 +42,52 @@ public class Arrow : MonoBehaviour
 
             return; 
         }
+        if (other.gameObject.CompareTag("EnemyLImit")) // Reemplaza "SpecialTag" con el tag específico que necesitas
+        {
+
+            float reductionAmount = 0.05f; // Disminuye un 5%
+            versusBarController.UpdateScore(-reductionAmount, true); // Special collision, no puede llegar a 0%
+
+            Debug.Log("Flecha colisionó con SpecialTag y la puntuación de BF se reduce al mínimo del 5%.");
+
+            Destroy(gameObject);
+            Debug.Log("Flecha alcanzó el SpecialTag, disminuyendo la barra de versus a un valor mínimo");
+            return;
+        }
     }
 
     public void CalculateScore(float currentY)
     {
-        if (isHit) return; 
-        if (currentY >= 781f && currentY < 800f)
+        if (isHit) return;
+       
+        if (currentY >= 2481f && currentY < 2500f)
         {
             Debug.Log("Perfecto! Puntuación: 20");
             gameController.AddScore(20);
             gameController.ShowMessage("Fatal!");
         }
-        else if (currentY >= 751f && currentY < 780f)
+        else if (currentY >= 2451f && currentY < 2480f)
         {
             Debug.Log("Fatal! Puntuación: 50");
             gameController.AddScore(50);
             gameController.ShowMessage("Regular!");
 
         }
-        else if (currentY >= 730f && currentY < 750f)
+        else if (currentY >= 2410f && currentY < 2450f)
         {
             Debug.Log("Regular! Puntuación: 60");
             gameController.AddScore(60);
             gameController.ShowMessage("Bien!");
 
         }
-        else if (currentY >= 700f && currentY < 729f)
+        else if (currentY >= 2400f && currentY < 2440f)
         {
             Debug.Log("Perfecto! Puntuación: 100");
             gameController.AddScore(100);
             gameController.ShowMessage("Perfecto!");
 
         }
-        else if (currentY >= 660f && currentY < 699f)
+        else if (currentY >= 2360f && currentY < 2399f)
         {
             Debug.Log("Bueno! Puntuación: 50");
             gameController.AddScore(50);
@@ -81,14 +95,14 @@ public class Arrow : MonoBehaviour
 
 
         }
-        else if (currentY >= 650f && currentY < 659.99f)
+        else if (currentY >= 2350f && currentY < 2359.99f)
         {
             Debug.Log("Regular! Puntuación: 60");
             gameController.AddScore(60);
             gameController.ShowMessage("Regular!");
 
         }
-        else if (currentY >= 630f && currentY < 649f)
+        else if (currentY >= 2300f && currentY < 2349f)
         {
             Debug.Log("Fatal! Puntuación: 20");
             gameController.AddScore(20);
@@ -108,6 +122,7 @@ public class Arrow : MonoBehaviour
         if (!isHit) 
         {
             Debug.Log("Flecha acertada, aumentando barra de versus");
+            Destroy(gameObject);
 
             float currentY = transform.localPosition.y;
             CalculateScore(currentY);
@@ -117,6 +132,7 @@ public class Arrow : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
     
 
 }

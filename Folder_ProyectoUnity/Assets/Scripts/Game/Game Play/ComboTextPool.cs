@@ -7,7 +7,7 @@ public class ComboTextPool : MonoBehaviour
     public TextMeshProUGUI comboTextPrefab;
     public Transform comboTextParent;
     public Vector3 initialPosition; // Posición inicial de los textos de combo
-    private CustomQueueManager customQueueManager;
+    public CustomQueueManager customQueueManager;
 
     private void Start()
     {

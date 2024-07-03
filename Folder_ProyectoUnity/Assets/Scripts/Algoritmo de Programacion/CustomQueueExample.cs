@@ -38,7 +38,7 @@ public class CustomQueueManager : MonoBehaviour
         customQueue.Clear();
     }
 
-    // Método para mostrar los elementos de la cola usando un bucle for
+    // Método para mostrar los elementos de la cola 
     public void PrintQueueItems()
     {
         // Convertir la cola a una matriz para poder acceder a los elementos por índice

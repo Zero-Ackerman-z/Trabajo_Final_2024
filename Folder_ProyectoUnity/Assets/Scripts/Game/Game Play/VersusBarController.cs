@@ -18,6 +18,8 @@ public class VersusBarController : MonoBehaviour
 
     [Range(0, 1)]
     public float initialFillAmount = 0.5f; // Cantidad de llenado inicial (0.5 para el centro)
+    private const float minimumSpecialScore = 0.5f; // Mínimo permitido en porcentaje para colisiones especiales (5%)
+    public GameManager gameManager; // Referencia al GameManager
 
     private void Start()
     {
@@ -57,19 +59,40 @@ public class VersusBarController : MonoBehaviour
         UpdateIconsAndMovement(fillAmount);
     }
 
-    public void UpdateScore(float amount)
+    public void UpdateScore(float amount, bool isSpecial = false)
     {
         Debug.Log("Actualizando puntuación con cantidad: " + amount);
 
-        // Aumenta la puntuación de BF y disminuye la de GV
+        // Calcula la nueva puntuación para BF y GV
         bfScore += amount * 100f;
         gvScore -= amount * 100f;
 
-        // No se aplica clamping aquí para permitir que bfScore y gvScore superen 100 o bajen de 0
-
+        // Log para depuración
         Debug.Log("Puntuación BF: " + bfScore + " | Puntuación GV: " + gvScore);
-        bfScore = Mathf.Clamp(bfScore, 0f, 100f);
-        gvScore = Mathf.Clamp(gvScore, 0f, 100f);
+
+        // Lógica para manejar la puntuación mínima basada en el tipo de colisión
+        if (isSpecial)
+        {
+            // Clamping para colisiones especiales, no permitiendo que baje de un mínimo
+            bfScore = Mathf.Max(bfScore, minimumSpecialScore);
+            gvScore = Mathf.Max(gvScore, minimumSpecialScore);
+        }
+        else
+        {
+            // Clamping normal, permitiendo que llegue a 0 solo para BF
+            if (bfScore <= 0)
+            {
+                bfScore = 0;
+                // Llama al método de pausa en el GameManager solo cuando BF llega a 0
+                gameManager.PauseGame();
+            }
+            else
+            {
+                bfScore = Mathf.Clamp(bfScore, 0f, 100f);
+            }
+
+            gvScore = Mathf.Clamp(gvScore, 0f, 100f);
+        }
 
         float totalScore = bfScore + gvScore;
         if (totalScore == 0)
@@ -81,7 +104,6 @@ public class VersusBarController : MonoBehaviour
 
         SetFillAmount(gvScore / totalScore); // Actualiza el llenado de acuerdo a la puntuación
     }
-
     private void UpdateIcons()
     {
         // Actualiza los sprites de los iconos basándose en fillAmount y puntuación actual

@@ -11,8 +11,8 @@ public class EventManager : MonoBehaviour
     public static Action StartTransitionEvent;
     public static Action StartCountdownEvent; // Nuevo evento para iniciar el conteo regresivo
     public static Action CountdownCompletedEvent; // Nuevo evento para iniciar el conteo regresivo
-
     public static EventManager Instance { get; private set; }
+
     private void Awake()
     {
         if (Instance == null)

@@ -7,6 +7,8 @@ public class SplashScreenSceneManager : MonoBehaviour
 {
     [Header("UI References")]
     public Transform logo;
+    public Transform Fondo;
+
     public RectTransform[] uiElements;
 
     [Header("ScriptableObjects")]
@@ -62,7 +64,10 @@ public class SplashScreenSceneManager : MonoBehaviour
         {
             logo.DOMoveY(logo.position.y - Screen.height, 1.5f).SetEase(Ease.InOutQuad);
         }
-
+        if (Fondo != null)
+        {
+            logo.DOMoveY(logo.position.y - Screen.height, 1.5f).SetEase(Ease.InOutQuad);
+        }
         for (int i = 0; i < uiElements.Length; i++)
         {
             RectTransform uiElement = uiElements[i];

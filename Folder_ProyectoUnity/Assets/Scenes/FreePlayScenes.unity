@@ -631,8 +631,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b92946cedb32e43bd2dc182dc2643e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedScale: 1.2
-  defaultScale: 2
+  selectedScale: 4.2
+  defaultScale: 4
   moveDistance: 30
 --- !u!1 &1541151735
 GameObject:

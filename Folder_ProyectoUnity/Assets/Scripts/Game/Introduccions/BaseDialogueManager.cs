@@ -28,7 +28,7 @@ public abstract class BaseDialogueManager : MonoBehaviour
             {
                 AudioManager.Instance.PlayLetterSound();
             }
-            yield return new WaitForSeconds(0.01f); // Tiempo entre cada letra
+            yield return new WaitForSeconds(0.04f); // Tiempo entre cada letra
         }
         isTyping = false;
 

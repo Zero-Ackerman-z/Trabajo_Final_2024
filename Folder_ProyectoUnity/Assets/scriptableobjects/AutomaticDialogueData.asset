@@ -63,7 +63,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 997167897, guid: 7baec22b3aa5ecb42bfb996c2309ef67, type: 3}
     changeMusic: 0
     newMusic: {fileID: 8300000, guid: a0bc5781828c08d4aadca3e92bc3b839, type: 3}
-  - dialogueName: Quienes son
+  - dialogueName: Quienes son??
     text: "Una semana despu\xE9s, Gunvolt siente la presencia de un nuevo adepto.
       Aunque su coraz\xF3n est\xE1 lleno de dolor, su deber lo llama a investigar
       ............. "

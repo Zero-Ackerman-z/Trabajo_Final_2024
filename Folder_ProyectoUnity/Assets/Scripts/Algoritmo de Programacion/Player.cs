@@ -5,16 +5,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public GraphControl graphControl;  // Referencia al grafo
+    public GraphControl graphControl;  
     private NodeControl currentNode;   // Nodo actual al que se dirige el jugador
     private MyHashSet<NodeControl> visitedNodes; // Conjunto de nodos visitados
     private MyStack<NodeControl> nodeHistory; // Historial de nodos para permitir retroceso
     private bool isNavigating; // Para evitar que se inicien múltiples navegaciones al mismo tiempo
-    private ActionsControllers controls; // Referencia a los controles de entrada
+    private ActionsControllers controls; 
 
     void Start()
     {
-        // Asegurarse de que el GraphControl esté configurado correctamente
         if (graphControl == null)
         {
             Debug.LogError("GraphControl is not assigned. Please assign it in the Inspector.");
@@ -25,12 +24,10 @@ public class PlayerMovement : MonoBehaviour
         nodeHistory = new MyStack<NodeControl>();
         isNavigating = false;
 
-        // Configurar los controles de entrada
         controls = new ActionsControllers();
         controls.PaneController.DFJKPanel.performed += ctx => OnDFJKPanelPressed(ctx);
         controls.Enable();
 
-        // Comienza moviéndose al nodo 0
         StartCoroutine(MoveToStartNode());
     }
 
@@ -38,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 direction = context.ReadValue<Vector2>();
 
-        // Solo permitir movimientos horizontales o verticales
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             direction.y = 0f;
@@ -62,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         if (nextNode != null)
         {
             Debug.Log($"Found node in direction {direction}: {nextNode.nodeIndex}");
-            nodeHistory.Push(currentNode); // Añadir el nodo actual al historial
+            nodeHistory.Push(currentNode); 
             StartCoroutine(NavigateToNode(nextNode, false)); // false indica que es avance, no retroceso
         }
         else

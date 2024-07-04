@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 public class GraphControl : MonoBehaviour
 {
-    public GameObject nodePrefab;  // Prefab para los nodos
-    public TextAsset nodePositionsTxt;  // Archivo de texto con posiciones de nodos
-    public string[] arrayNodePositions;  // Array para almacenar las posiciones de nodos desde el archivo de texto
-    public string[] currentNodePositions;  // Array para posiciones actuales de los nodos
-    public TextAsset nodeConnectionsTxt;  // Archivo de texto con conexiones de nodos
-    public string[] arrayNodeConnections;  // Array para almacenar las conexiones de nodos desde el archivo de texto
-    public string[] currentNodeConnections;  // Array para conexiones actuales de los nodos
-    public DoublyLinkedList<NodeControl> allNodes = new DoublyLinkedList<NodeControl>();  // Lista de todos los nodos creados
+    public GameObject nodePrefab;  
+    public TextAsset nodePositionsTxt;  
+    public string[] arrayNodePositions;  
+    public string[] currentNodePositions;  
+    public TextAsset nodeConnectionsTxt;  
+    public string[] arrayNodeConnections;  
+    public string[] currentNodeConnections;  
+    public DoublyLinkedList<NodeControl> allNodes = new DoublyLinkedList<NodeControl>();  
 
     private void Start()
     {

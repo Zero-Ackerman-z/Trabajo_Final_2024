@@ -9,9 +9,10 @@ public class LogoAnimation : BaseAnimation
     public float animationSpeed = 1f;
     public float scaleFactor = 1.1f;
     public float animationSpeedScale = 1f;
-
+    public GameObject Fondo;
     protected override void StartAnimation()
     {
+        Fondo.SetActive(true);
         base.StartAnimation();
 
         Vector3 targetPosition = new Vector3(transform.position.x, 1.6f, transform.position.z);

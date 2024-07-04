@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b77b680df396c574e89dfcd3e80ccbd7
+guid: ae434989c91dc5a4ca593fcca1477998
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,28 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: png-transparent-brand-line-logo-number-technology-sprite-arrow-blue-angle-text_0
-      rect:
-        serializedVersion: 2
-        x: 595
-        y: 402
-        width: 142
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f98ba99545c93440b0708ee2fa8fc4b
-      internalID: 2011283719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -153,8 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      png-transparent-brand-line-logo-number-technology-sprite-arrow-blue-angle-text_0: 2011283719
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

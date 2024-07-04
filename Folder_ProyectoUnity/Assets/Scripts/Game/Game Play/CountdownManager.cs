@@ -10,6 +10,7 @@ public class CountdownManager : MonoBehaviour
     [SerializeField] private float countdownDuration = 0.5f;
 
     private AudioSource audioSource;
+    public GameObject arrowSpawner; 
 
     private void Start()
     {
@@ -50,6 +51,7 @@ public class CountdownManager : MonoBehaviour
 
         countdownText.text = "";
         EventManager.CountdownCompletedEvent?.Invoke();
+        arrowSpawner.SetActive(true);
 
     }
 
